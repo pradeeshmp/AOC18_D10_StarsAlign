@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/aoc_bg">
+
+    <ImageView
+        android:id="@+id/ewsSplashLogoImgRightImgv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|center_vertical"
+        android:layout_marginLeft="130dp"
+        android:layout_marginBottom="130dp"
+        android:src="@drawable/ews_splash_logo_01" />
+
+    <ImageView
+        android:id="@+id/ewsSplashLogoImgLeftImgv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="130dp"
+        android:layout_marginTop="130dp"
+        android:layout_gravity="center|center_vertical"
+        android:src="@drawable/ews_splash_logo_02" />
+
+    <TextView
+        android:id="@+id/ewsSplashLogoTitleTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="80sp"
+        android:layout_marginTop="380dp"
+        android:textColor="@color/colorPoleThemeText"
+        android:text="The Stars Align"
+        android:layout_gravity="center|center_vertical"
+        />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
