@@ -11,7 +11,8 @@
         android:layout_gravity="center|center_vertical"
         android:layout_marginLeft="130dp"
         android:layout_marginBottom="130dp"
-        android:src="@drawable/ews_splash_logo_01" />
+        android:src="@drawable/ews_splash_logo_01"
+        android:contentDescription="@string/app_name" />
 
     <ImageView
         android:id="@+id/ewsSplashLogoImgLeftImgv"
@@ -26,11 +27,10 @@
         android:id="@+id/ewsSplashLogoTitleTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="80sp"
-        android:layout_marginTop="380dp"
-        android:textColor="@color/colorPoleThemeText"
-        android:text="The Stars Align"
         android:layout_gravity="center|center_vertical"
-        />
+        android:layout_marginTop="380dp"
+        android:text="@string/app_name"
+        android:textColor="@color/colorPoleThemeText"
+        android:textSize="80sp" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

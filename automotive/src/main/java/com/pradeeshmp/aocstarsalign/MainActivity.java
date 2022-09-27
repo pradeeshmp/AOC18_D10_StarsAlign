@@ -126,6 +126,7 @@ public class MainActivity extends Activity {
             point.x -= point.dx;
             point.y -= point.dy;
         }
+        seconds--;
         givePointsToCanvasView();
     }
 
@@ -136,6 +137,6 @@ public class MainActivity extends Activity {
         }
         starView.plotMyStars(points);
         Log.d(this.getClass().getName(), "Seconds Taken :"+this.seconds);
-        secondsTv.setText("Took "+this.seconds+" seconds to align");
+        secondsTv.setText("Will take "+this.seconds+" seconds to align");
     }
 }
