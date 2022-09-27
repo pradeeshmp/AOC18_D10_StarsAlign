@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Pradeesh on 27/09/22, 12:21 PM
+ *  * Created by Pradeesh on 27/09/22, 01:21 PM
  *  * Copyright (c) 2022 . All rights reserved.
- *  * Last modified 27/09/22, 01:08 PM
+ *  * Last modified 27/09/22, 02:09 PM
  *
  */
 
@@ -10,6 +10,8 @@ package com.pradeeshmp.aocstarsalign;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.TextView;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -27,10 +29,14 @@ public class MainActivity extends Activity {
     int seconds = 0;
     //Canvas view for better presentation
     String FILE_NAME = "d10.txt";
+    StarView starView;
+    TextView secondsTv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        starView = findViewById(R.id.starView);
+        secondsTv = findViewById(R.id.secondsTv);
         try {
             parseInput();
         } catch (IOException e) {
@@ -120,8 +126,16 @@ public class MainActivity extends Activity {
             point.x -= point.dx;
             point.y -= point.dy;
         }
-
+        givePointsToCanvasView();
     }
 
-
+    private void givePointsToCanvasView() {
+        for (Point point : points) {
+            point.x = point.x - minX;
+            point.y = point.y - minY;
+        }
+        starView.plotMyStars(points);
+        Log.d(this.getClass().getName(), "Seconds Taken :"+this.seconds);
+        secondsTv.setText("Took "+this.seconds+" seconds to align");
+    }
 }

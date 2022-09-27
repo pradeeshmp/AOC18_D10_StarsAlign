@@ -1,9 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:background="@drawable/aoc_bg">
 
-</RelativeLayout>
+    <view
+        android:id="@+id/starView"
+        class="com.pradeeshmp.aocstarsalign.StarView"
+        android:layout_width="wrap_content"
+        android:layout_height="400dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/secondsTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00000"
+        android:textColor="@color/colorPoleThemeText"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/starView"
+        app:layout_constraintVertical_bias="0.044"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
