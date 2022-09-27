@@ -9,6 +9,7 @@
 package com.pradeeshmp.aocstarsalign;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.animation.Animation;
@@ -30,9 +31,9 @@ public class SplashActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        logoImageViewLeft = (ImageView) findViewById(R.id.ewsSplashLogoImgLeftImgv);
-        logoImageViewRight = (ImageView) findViewById(R.id.ewsSplashLogoImgRightImgv);
-        appTitleTextView = (TextView) findViewById(R.id.ewsSplashLogoTitleTv);
+        logoImageViewLeft = findViewById(R.id.ewsSplashLogoImgLeftImgv);
+        logoImageViewRight = findViewById(R.id.ewsSplashLogoImgRightImgv);
+        appTitleTextView = findViewById(R.id.ewsSplashLogoTitleTv);
 
         logoFromLeft = AnimationUtils.loadAnimation(this, R.anim.fromtopcorner);
         logoFromRight = AnimationUtils.loadAnimation(this, R.anim.frombottomcorner);
@@ -43,12 +44,9 @@ public class SplashActivity extends Activity {
         appTitleTextView.setAnimation(appTitleFade);
 
         Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-//                Intent intent = new Intent(SplashActivity.this, MainActivity.class);
-//                startActivity(intent);
-            }
+        handler.postDelayed(() -> {
+            Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+            startActivity(intent);
         }, 4000);
     }
 }
